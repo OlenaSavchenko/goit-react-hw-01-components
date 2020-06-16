@@ -1,0 +1,22 @@
+.item {
+  display: flex;
+  max-width: 300px;
+  padding: 5px;
+  margin: 0 auto 15px;
+  align-items: center;
+  box-shadow: 2px 2px 6px 0px rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+.avatar {
+  margin-right: 15px;
+  margin-left: 15px;
+  border-radius: 5%;
+}
+
+.status {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  border-radius: 50%;
+}
