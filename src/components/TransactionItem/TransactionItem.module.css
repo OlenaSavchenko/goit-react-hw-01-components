@@ -1,0 +1,14 @@
+.item {
+  background-color: rgb(255, 255, 255);
+  color: darkgrey;
+}
+
+.item:nth-child(2n) {
+  background-color: rgb(214, 222, 228);
+}
+.item td {
+  padding: 15px;
+}
+.item td::first-letter {
+  text-transform: uppercase;
+}

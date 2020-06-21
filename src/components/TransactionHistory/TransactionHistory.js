@@ -1,6 +1,7 @@
 // Модули
 import React from 'react';
 import PropTypes from 'prop-types';
+import TransactionItem from '../TransactionItem/TransactionItem';
 // Стили
 import styles from './TransactionHistory.module.css';
 
@@ -15,24 +16,19 @@ const Transactions = ({ items }) => (
     </thead>
 
     <tbody>
-      {items.map(({ id, type, amount, currency }) => (
-        <tr key={id} className={styles.item}>
-          <td>{type}</td>
-          <td>{amount}</td>
-          <td>{currency}</td>
-        </tr>
+      {items.map(({ id, ...item }) => (
+        <TransactionItem key={id} item={item} />
       ))}
     </tbody>
   </table>
 );
+
 Transactions.propTypes = {
   items: PropTypes.arrayOf(
-    PropTypes.exact({
+    PropTypes.shape({
       id: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
-      amount: PropTypes.string.isRequired,
-      currency: PropTypes.string.isRequired,
-    }).isRequired,
+    }),
   ).isRequired,
 };
+
 export default Transactions;
